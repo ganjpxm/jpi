@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="scp-9e-yCX">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe Book View Controller - Recipe Book-->
+        <scene sceneID="RiK-Er-6rE">
+            <objects>
+                <viewController id="EFS-ff-7i7" customClass="RecipeBookViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eu6-L0-gEe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-pO-8QH">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="H3B-RQ-DRo">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="sG0-bH-z8s" kind="push" identifier="showRecipeDetail" id="BaS-9X-AiZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EFS-ff-7i7" id="SsG-xG-Ll6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nkr-pO-8QH" firstAttribute="bottom" secondItem="Eu6-L0-gEe" secondAttribute="bottom" type="default" id="oOM-0q-MJE"/>
+                            <constraint firstItem="Nkr-pO-8QH" firstAttribute="leading" secondItem="Eu6-L0-gEe" secondAttribute="leading" type="default" id="qc2-dA-6KK"/>
+                            <constraint firstItem="Nkr-pO-8QH" firstAttribute="top" secondItem="Eu6-L0-gEe" secondAttribute="top" type="default" id="vYa-Bo-zpb"/>
+                            <constraint firstItem="Nkr-pO-8QH" firstAttribute="trailing" secondItem="Eu6-L0-gEe" secondAttribute="trailing" type="default" id="xBZ-qs-B9g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe Book" id="62C-qQ-AeU"/>
+                    <connections>
+                        <outlet property="recipeBookTv" destination="Nkr-pO-8QH" id="JgU-Rk-Rwz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4y-LY-6nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="12"/>
+        </scene>
+        <!--Recipe Detail View Controller - Recipe Detail-->
+        <scene sceneID="n4d-x1-1gL">
+            <objects>
+                <viewController id="sG0-bH-z8s" customClass="RecipeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FCM-Lt-MAz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Book Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZL-Ld-CnM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="8Ys-Db-bPT"/>
+                                    <constraint firstAttribute="width" constant="220" id="Vfr-aL-sHS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qZL-Ld-CnM" firstAttribute="top" secondItem="FCM-Lt-MAz" secondAttribute="top" constant="36" id="IhS-4R-tz0"/>
+                            <constraint firstItem="qZL-Ld-CnM" firstAttribute="leading" secondItem="FCM-Lt-MAz" secondAttribute="leading" constant="49" id="Sl2-Ke-oDQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe Detail" id="cm8-o2-SoN"/>
+                    <connections>
+                        <outlet property="recipeNameLbl" destination="qZL-Ld-CnM" id="Hpf-BZ-ukL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3Z-K4-6H1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="12"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2OT-Bx-uEp">
+            <objects>
+                <navigationController id="scp-9e-yCX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IKA-gR-mMa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EFS-ff-7i7" kind="relationship" relationship="rootViewController" id="thX-mP-6Gt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7c-y4-MuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-189" y="12"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
