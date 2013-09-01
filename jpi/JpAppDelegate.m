@@ -12,6 +12,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /**
+     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+     
+     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+     
+     self.window.rootViewController = [storyboard instantiateInitialViewController];
+     
+     [self.window makeKeyAndVisible];
+     */
+    /**
+     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+     // Override point for customization after application launch.
+     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+     self.window.rootViewController = self.viewController;
+     [self.window makeKeyAndVisible];
+     return YES;
+     */
     // Override point for customization after application launch.
     return YES;
 }

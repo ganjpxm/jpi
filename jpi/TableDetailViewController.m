@@ -1,18 +1,21 @@
 //
-//  HomeSbViewController.m
+//  RecipeDetailViewController.m
 //  Jpi
 //
-//  Created by lenben on 25/8/13.
+//  Created by ganjianping on 26/8/13.
 //  Copyright (c) 2013 ganjp. All rights reserved.
 //
 
-#import "HomeSbViewController.h"
+#import "TableDetailViewController.h"
 
-@interface HomeSbViewController ()
+@interface TableDetailViewController ()
 
 @end
 
-@implementation HomeSbViewController
+@implementation TableDetailViewController
+
+@synthesize languageName;
+@synthesize languageNameLbl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +30,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    languageNameLbl.text = @"Description";
+    self.navigationItem.title = languageName;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,11 +40,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)logout:(id)sender {
-    [self performSegueWithIdentifier:@"homeToLogin" sender:self];
-}
 @end

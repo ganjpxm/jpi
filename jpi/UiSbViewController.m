@@ -1,21 +1,18 @@
 //
-//  RecipeDetailViewController.m
+//  UiStoryboardViewController.m
 //  Jpi
 //
-//  Created by lenben on 26/8/13.
+//  Created by lenben on 1/9/13.
 //  Copyright (c) 2013 ganjp. All rights reserved.
 //
 
-#import "RecipeDetailViewController.h"
+#import "UiSbViewController.h"
 
-@interface RecipeDetailViewController ()
+@interface UiSbViewController ()
 
 @end
 
-@implementation RecipeDetailViewController
-
-@synthesize recipeName;
-@synthesize recipeNameLbl;
+@implementation UiSbViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    recipeNameLbl.text = recipeName;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,9 +35,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (IBAction)clickTableViewBtn:(id)sender {
+    UIStoryboard *uiSb = self.storyboard;
+    UIViewController *tableVc = [uiSb instantiateViewControllerWithIdentifier:@"table"];
+    [self.navigationController pushViewController:tableVc animated:YES];
 }
 
+- (void)viewDidUnload {
+    [self setBackBtn:nil];
+    [super viewDidUnload];
+}
 @end
